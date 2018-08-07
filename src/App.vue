@@ -1,28 +1,15 @@
 <template>
   <div id="app">
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">CRUD</a>
-        </div>
-      </div>
-    </nav>
+
+    <!-- 网页的header -->
+    <app-header></app-header>
+
     <div class="container-fluid">
       <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
-            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
-            <li><a href="#">Reports</a></li>
-            <li><a href="#">Analytics</a></li>
-            <li><a href="#">Export</a></li>
-          </ul>
-        </div>
+
+        <!-- sidebar -->
+        <app-side-bar></app-side-bar>
+
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h2 class="sub-header">Hero List</h2>
           <a class="btn btn-success" href="add.html">Add</a>
@@ -241,12 +228,18 @@
 </template>
 
 <script>
-export default {
-  name: 'app',
-  data () {
+  // 导入AppHeader组件
+  import AppHeader from './components/AppHeader.vue';
+  // 导入AppSideBar组件
+  import AppSideBar from './components/AppSideBar.vue';
 
+  // 导出组件
+  export default {
+    components: {
+      AppHeader,
+      AppSideBar
+    }
   }
-}
 </script>
 
 <style>
